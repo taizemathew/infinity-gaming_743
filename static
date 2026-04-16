@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="InfinityGaming_743 - Official social hub for epic gaming content, live streams, clips &amp; community">
+
+    <title>InfinityGaming_743 | Join the Infinite Squad</title>
+
+    
+
+    <!-- Tailwind CSS CDN -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+
+    <!-- Font Awesome for social icons -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+
+        
+
+        :root {
+
+            --tw-color-primary: #00ff9f;
+
+        }
+
+        
+
+        * {
+
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+            transition-duration: 150ms;
+
+        }
+
+        
+
+        .tail-container * {
+
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+        }
+
+        
+
+        .hero-bg {
+
+            background-image: url('https://picsum.photos/seed/infinitygaming/1920/1080');
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+        }
+
+        
+
+        @keyframes neon-flicker {
+
+            0%, 100% { text-shadow: 0 0 10px #00ff9f, 0 0 20px #00ff9f; }
+
+            50% { text-shadow: 0 0 5px #00ff9f, 0 0 10px #00ff9f, 0 0 30px #00ff9f; }
+
+        }
+
+        
+
+        .neon-text {
+
+            animation: neon-flicker 2s infinite alternate;
+
+        }
+
+        
+
+        .social-card {
+
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        }
+
+        
+
+        .social-card:hover {
+
+            transform: translateY(-8px) scale(1.05);
+
+            box-shadow: 0 25px 50px -12px rgb(0 255 159 / 0.3);
+
+        }
+
+        
+
+        /* Mobile & Tablet specific enhancements */
+
+        @media (max-width: 768px) {
+
+            .hero-bg {
+
+                background-attachment: scroll;
+
+            }
+
+            .nav-text {
+
+                font-size: 1.1rem;
+
+            }
+
+        }
+
+        
+
+        /* Dynamic responsive navbar */
+
+        .mobile-menu {
+
+            animation: slideDown 0.3s ease forwards;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="tail-container">
+
+    <!-- NAVBAR - Fully responsive for Mobile / Tablet / PC -->
+
+    <nav class="bg-black/90 backdrop-blur-md border-b border-[#00ff9f]/30 sticky top-0 z-50">
+
+        <div class="max-w-screen-2xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            
+
+            <!-- Logo / Channel Name -->
+
+            <div class="flex items-center gap-3">
+
+                <div class="w-10 h-10 bg-[#00ff9f] text-black rounded-2xl flex items-center justify-center text-2xl font-bold rotate-12">
+
+                    ♾️
+
+                </div>
+
+                <h1 class="text-3xl font-bold tracking-tighter text-white neon-text">
+
+                    INFINITY<span class="text-[#00ff9f]">GAMING</span><span class="text-xs align-super ml-1">743</span>
+
+                </h1>
+
+            </div>
+
+
+
+            <!-- Desktop Menu -->
+
+            <div class="hidden md:flex items-center gap-8 text-white">
+
+                <a href="#home" onclick="smoothScrollTo('home')" 
+
+                   class="hover:text-[#00ff9f] flex items-center gap-1 text-sm uppercase tracking-widest font-medium">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    HOME
+
+                </a>
+
+                <a href="#socials" onclick="smoothScrollTo('socials')" 
+
+                   class="hover:text-[#00ff9f] flex items-center gap-1 text-sm uppercase tracking-widest font-medium">
+
+                    <i class="fa-solid fa-link"></i>
+
+                    SOCIALS
+
+                </a>
+
+                <a href="#" onclick="showDiscordModal()" 
+
+                   class="hover:text-[#00ff9f] flex items-center gap-1 text-sm uppercase tracking-widest font-medium">
+
+                    <i class="fa-brands fa-discord"></i>
+
+                    DISCORD
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Follow Button (PC + Tablet) -->
+
+            <div class="hidden md:flex items-center gap-2">
+
+                <a href="https://www.youtube.com/@infinitygaming_743" target="_blank"
+
+                   class="flex items-center bg-[#00ff9f] hover:bg-white text-black px-6 py-2.5 rounded-3xl font-bold text-sm uppercase tracking-widest">
+
+                    <i class="fa-brands fa-youtube mr-2"></i>
+
+                    SUBSCRIBE
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Mobile Hamburger -->
+
+            <button onclick="toggleMobileMenu()" 
+
+                    class="md:hidden text-white text-3xl p-2 hover:text-[#00ff9f]">
+
+                <i id="hamburger-icon" class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- Mobile Menu (slides down) -->
+
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-md border-t border-[#00ff9f]/30 px-6 py-4 mobile-menu">
+
+            <div class="flex flex-col gap-4 text-white">
+
+                <a href="#home" onclick="toggleMobileMenu();smoothScrollTo('home')" 
+
+                   class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-2xl">
+
+                    <i class="fa-solid fa-house w-5"></i>
+
+                    <span class="uppercase tracking-widest font-medium">Home</span>
+
+                </a>
+
+                <a href="#socials" onclick="toggleMobileMenu();smoothScrollTo('socials')" 
+
+                   class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-2xl">
+
+                    <i class="fa-solid fa-link w-5"></i>
+
+                    <span class="uppercase tracking-widest font-medium">Social Links</span>
+
+                </a>
+
+                <a href="#" onclick="toggleMobileMenu();showDiscordModal()" 
+
+                   class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-2xl">
+
+                    <i class="fa-brands fa-discord w-5"></i>
+
+                    <span class="uppercase tracking-widest font-medium">Join Discord</span>
+
+                </a>
+
+                
+
+                <!-- Mobile social quick links -->
+
+                <div class="pt-4 border-t border-white/10 grid grid-cols-4 gap-3 text-center">
+
+                    <a href="https://www.youtube.com/@infinitygaming_743" target="_blank" class="flex flex-col items-center">
+
+                        <i class="fa-brands fa-youtube text-3xl text-red-500"></i>
+
+                        <span class="text-[10px] mt-1">YT</span>
+
+                    </a>
+
+                    <a href="https://www.instagram.com/infinitygaming_743" target="_blank" class="flex flex-col items-center">
+
+                        <i class="fa-brands fa-instagram text-3xl text-pink-500"></i>
+
+                        <span class="text-[10px] mt-1">IG</span>
+
+                    </a>
+
+                    <a href="https://www.facebook.com/infinitygaming_743" target="_blank" class="flex flex-col items-center">
+
+                        <i class="fa-brands fa-facebook text-3xl text-blue-600"></i>
+
+                        <span class="text-[10px] mt-1">FB</span>
+
+                    </a>
+
+                    <a href="https://www.twitch.tv/infinitygaming_743" target="_blank" class="flex flex-col items-center">
+
+                        <i class="fa-brands fa-twitch text-3xl text-purple-500"></i>
+
+                        <span class="text-[10px] mt-1">TW</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- HERO SECTION with background image - responsive across all devices -->
+
+    <section id="home" class="hero-bg min-h-screen flex items-center relative">
+
+        <!-- Dark overlay for text readability -->
+
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+
+        
+
+        <div class="max-w-screen-2xl mx-auto px-6 relative z-10">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                
+
+                <!-- Left content -->
+
+                <div class="lg:col-span-7 text-center lg:text-left">
+
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-3xl mb-6 text-sm font-medium text-[#00ff9f] border border-[#00ff9f]/30">
+
+                        <div class="w-2 h-2 bg-[#00ff9f] rounded-full animate-pulse"></div>
+
+                        LIVE GAMING COMMUNITY
+
+                    </div>
+
+                    
+
+                    <h1 class="text-6xl md:text-7xl lg:text-8xl font-black leading-none text-white neon-text tracking-[-4px]">
+
+                        INFINITY<span class="text-[#00ff9f]">GAMING</span><span class="text-5xl align-super ml-2">743</span>
+
+                    </h1>
+
+                    
+
+                    <p class="mt-6 text-2xl md:text-3xl text-white/90 max-w-lg mx-auto lg:mx-0">
+
+                        Epic gameplay. Infinite vibes.<br>
+
+                        Level up with the squad.
+
+                    </p>
+
+                    
+
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-10">
+
+                        <a onclick="smoothScrollTo('socials')" 
+
+                           class="flex-1 md:flex-none bg-[#00ff9f] hover:bg-white text-black font-bold text-xl px-10 py-6 rounded-3xl flex items-center justify-center gap-3 shadow-lg shadow-[#00ff9f]/50">
+
+                            <i class="fa-solid fa-link"></i>
+
+                            EXPLORE SOCIALS
+
+                        </a>
+
+                        
+
+                        <a href="https://www.youtube.com/@infinitygaming_743" target="_blank"
+
+                           class="flex-1 md:flex-none border-2 border-white hover:border-[#00ff9f] text-white hover:text-[#00ff9f] font-bold text-xl px-10 py-6 rounded-3xl flex items-center justify-center gap-3">
+
+                            <i class="fa-brands fa-youtube text-3xl"></i>
+
+                            WATCH NOW
+
+                        </a>
+
+                    </div>
+
+                    
+
+                    <!-- Trust bar -->
+
+                    <div class="mt-12 flex flex-wrap justify-center lg:justify-start items-center gap-x-8 gap-y-3 text-white/70 text-sm">
+
+                        <div class="flex items-center gap-2">
+
+                            <i class="fa-solid fa-users"></i>
+
+                            <span>47K+ Squad Members</span>
+
+                        </div>
+
+                        <div class="flex items-center gap-2">
+
+                            <i class="fa-solid fa-fire"></i>
+
+                            <span>1.2M Monthly Views</span>
+
+                        </div>
+
+                        <div class="flex items-center gap-2">
+
+                            <i class="fa-solid fa-trophy"></i>
+
+                            <span>Top 0.1% Gamer</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- Right visual (PC/Tablet only) -->
+
+                <div class="hidden lg:flex lg:col-span-5 justify-end">
+
+                    <div class="bg-black/60 backdrop-blur-xl border border-[#00ff9f]/30 rounded-3xl p-8 max-w-xs w-full text-center">
+
+                        <div class="text-[#00ff9f] text-7xl mb-4">
+
+                            <i class="fa-brands fa-youtube"></i>
+
+                        </div>
+
+                        <p class="text-white text-2xl font-bold">Latest Drop</p>
+
+                        <p class="text-white/70 text-sm mt-1">“INSANE 1v4 Clutch in Warzone 🔥”</p>
+
+                        <div class="mt-6 h-2 bg-gradient-to-r from-[#00ff9f] to-transparent rounded-full"></div>
+
+                        <a href="https://www.youtube.com/@infinitygaming_743" target="_blank"
+
+                           class="mt-6 block w-full py-4 bg-white text-black rounded-3xl font-bold flex items-center justify-center">
+
+                            <i class="fa-solid fa-play mr-2"></i>
+
+                            WATCH ON YOUTUBE
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+
+        <!-- Scroll indicator -->
+
+        <div class="absolute bottom-10 left-1/2 hidden md:flex flex-col items-center text-white/60 text-xs tracking-widest">
+
+            <div class="mb-2">SCROLL FOR SOCIALS</div>
+
+            <i class="fa-solid fa-chevron-down animate-bounce text-2xl"></i>
+
+        </div>
+
+        
+
+        <!-- Gaming overlay elements -->
+
+        <div class="absolute bottom-8 right-8 hidden xl:block text-[#00ff9f]/30 text-9xl rotate-12 pointer-events-none">
+
+            ♾️
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SOCIAL LINKS SECTION - Dynamic grid for Mobile / Tablet / PC -->
+
+    <section id="socials" class="py-20 bg-zinc-950">
+
+        <div class="max-w-screen-2xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+
+                <span class="px-6 py-2 bg-[#00ff9f]/10 text-[#00ff9f] text-sm font-bold rounded-3xl">CONNECT WITH US</span>
+
+                <h2 class="text-5xl md:text-6xl font-bold text-white mt-4">Where the squad hangs out</h2>
+
+                <p class="text-white/60 mt-3 max-w-md mx-auto">
+
+                    Follow InfinityGaming_743 across all platforms for daily drops, live streams, clips &amp; community events
+
+                </p>
+
+            </div>
+
+            
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                
+
+                <!-- YouTube -->
+
+                <div class="social-card bg-zinc-900 border border-white/10 rounded-3xl p-8 text-center group">
+
+                    <i class="fa-brands fa-youtube text-7xl text-red-500 mb-6 group-hover:scale-110"></i>
+
+                    <h3 class="text-2xl font-bold text-white">YouTube</h3>
+
+                    <p class="text-emerald-400 text-lg">@infinitygaming_743</p>
+
+                    <p class="text-white/60 text-sm mt-2 mb-8">Full gameplay • Highlights • Tutorials</p>
+
+                    <a href="https://www.youtube.com/@infinitygaming_743" target="_blank"
+
+                       class="block w-full py-4 bg-red-600 hover:bg-red-700 text-white rounded-3xl font-bold flex items-center justify-center gap-2">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                        SUBSCRIBE • 87K
+
+                    </a>
+
+                </div>
+
+                
+
+                <!-- Instagram -->
+
+                <div class="social-card bg-zinc-900 border border-white/10 rounded-3xl p-8 text-center group">
+
+                    <i class="fa-brands fa-instagram text-7xl text-pink-500 mb-6 group-hover:scale-110"></i>
+
+                    <h3 class="text-2xl font-bold text-white">Instagram</h3>
+
+                    <p class="text-emerald-400 text-lg">@infinitygaming_743</p>
+
+                    <p class="text-white/60 text-sm mt-2 mb-8">Behind-the-scenes • Reels • Cosplay</p>
+
+                    <a href="https://www.instagram.com/infinitygaming_743" target="_blank"
+
+                       class="block w-full py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-3xl font-bold flex items-center justify-center">
+
+                        <i class="fa-brands fa-instagram mr-2"></i>
+
+                        FOLLOW • 34K
+
+                    </a>
+
+                </div>
+
+                
+
+                <!-- Facebook -->
+
+                <div class="social-card bg-zinc-900 border border-white/10 rounded-3xl p-8 text-center group">
+
+                    <i class="fa-brands fa-facebook text-7xl text-blue-600 mb-6 group-hover:scale-110"></i>
+
+                    <h3 class="text-2xl font-bold text-white">Facebook</h3>
+
+                    <p class="text-emerald-400 text-lg">infinitygaming_743</p>
+
+                    <p class="text-white/60 text-sm mt-2 mb-8">Community • Events • Memes</p>
+
+                    <a href="https://www.facebook.com/infinitygaming_743" target="_blank"
+
+                       class="block w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-3xl font-bold flex items-center justify-center gap-2">
+
+                        <i class="fa-brands fa-facebook"></i>
+
+                        LIKE PAGE
+
+                    </a>
+
+                </div>
+
+                
+
+                <!-- Twitch -->
+
+                <div class="social-card bg-zinc-900 border border-white/10 rounded-3xl p-8 text-center group">
+
+                    <i class="fa-brands fa-twitch text-7xl text-purple-500 mb-6 group-hover:scale-110"></i>
+
+                    <h3 class="text-2xl font-bold text-white">Twitch</h3>
+
+                    <p class="text-emerald-400 text-lg">infinitygaming_743</p>
+
+                    <p class="text-white/60 text-sm mt-2 mb-8">Live streams every week</p>
+
+                    <a href="https://www.twitch.tv/infinitygaming_743" target="_blank"
+
+                       class="block w-full py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-3xl font-bold flex items-center justify-center gap-2">
+
+                        <i class="fa-brands fa-twitch"></i>
+
+                        FOLLOW • LIVE NOW
+
+                    </a>
+
+                </div>
+
+                
+
+                <!-- X (Twitter) -->
+
+                <div class="social-card bg-zinc-900 border border-white/10 rounded-3xl p-8 text-center group">
+
+                    <i class="fa-brands fa-x-twitter text-7xl text-white mb-6 group-hover:scale-110"></i>
+
+                    <h3 class="text-2xl font-bold text-white">X / Twitter</h3>
+
+                    <p class="text-emerald-400 text-lg">@infinitygaming_743</p>
+
+                    <p class="text-white/60 text-sm mt-2 mb-8">Instant updates • Clips • Banter</p>
+
+                    <a href="https://x.com/infinitygaming_743" target="_blank"
+
+                       class="block w-full py-4 bg-white text-black rounded-3xl font-bold flex items-center justify-center">
+
+                        <i class="fa-brands fa-x-twitter mr-2"></i>
+
+                        FOLLOW
+
+                    </a>
+
+                </div>
+
+                
+
+                <!-- TikTok -->
+
+                <div class="social-card bg-zinc-900 border border-white/10 rounded-3xl p-8 text-center group">
+
+                    <i class="fa-brands fa-tiktok text-7xl text-white mb-6 group-hover:scale-110"></i>
+
+                    <h3 class="text-2xl font-bold text-white">TikTok</h3>
+
+                    <p class="text-emerald-400 text-lg">@infinitygaming_743</p>
+
+                    <p class="text-white/60 text-sm mt-2 mb-8">Shorts • Funny moments • Trends</p>
+
+                    <a href="https://www.tiktok.com/@infinitygaming_743" target="_blank"
+
+                       class="block w-full py-4 bg-black text-white border border-white/50 hover:border-[#00ff9f] rounded-3xl font-bold flex items-center justify-center gap-2">
+
+                        <i class="fa-brands fa-tiktok"></i>
+
+                        FOLLOW
+
+                    </a>
+
+                </div>
+
+                
+
+                <!-- Discord -->
+
+                <div class="social-card bg-zinc-900 border border-white/10 rounded-3xl p-8 text-center group col-span-1 sm:col-span-2 lg:col-span-1 xl:col-span-1">
+
+                    <i class="fa-brands fa-discord text-7xl text-indigo-400 mb-6 group-hover:scale-110"></i>
+
+                    <h3 class="text-2xl font-bold text-white">Discord</h3>
+
+                    <p class="text-emerald-400 text-lg">Official Server</p>
+
+                    <p class="text-white/60 text-sm mt-2 mb-8">Voice chats • Tournaments • Giveaways • Meet the squad</p>
+
+                    <button onclick="showDiscordModal()" 
+
+                            class="block w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-3xl font-bold flex items-center justify-center gap-2">
+
+                        <i class="fa-brands fa-discord"></i>
+
+                        JOIN SERVER
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- FINAL CTA / FOOTER TEASER -->
+
+    <div class="bg-black py-12 border-t border-[#00ff9f]/20">
+
+        <div class="max-w-screen-2xl mx-auto px-6 text-center">
+
+            <p class="text-white/70 text-sm mb-3">Ready to level up?</p>
+
+            <a href="https://www.youtube.com/@infinitygaming_743" target="_blank"
+
+               class="inline-flex items-center text-[#00ff9f] hover:text-white text-2xl font-bold">
+
+                SUBSCRIBE TO THE INFINITE JOURNEY 
+
+                <i class="fa-solid fa-arrow-right ml-4 text-3xl"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    
+
+    <!-- FOOTER -->
+
+    <footer class="bg-black text-white/60 py-8 border-t border-white/10">
+
+        <div class="max-w-screen-2xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+
+            <div>©️ 2026 InfinityGaming_743 • All Rights Reserved</div>
+
+            <div class="flex gap-6">
+
+                <a href="#" class="hover:text-[#00ff9f]">Privacy</a>
+
+                <a href="#" class="hover:text-[#00ff9f]">Terms</a>
+
+                <a href="#" onclick="showDiscordModal()" class="hover:text-[#00ff9f]">Discord Rules</a>
+
+            </div>
+
+            <div class="flex items-center gap-2">
+
+                Made for the squad 
+
+                <span class="text-[#00ff9f] text-xl">♾️</span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    
+
+    <!-- DISCORD MODAL -->
+
+    <div onclick="if(event.target.id === 'discord-modal')hideDiscordModal()" 
+
+         id="discord-modal"
+
+         class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center">
+
+        
+
+        <div onclick="event.stopImmediatePropagation()" 
+
+             class="bg-zinc-900 max-w-md w-full mx-4 rounded-3xl p-8">
+
+            <div class="flex justify-between items-start">
+
+                <div>
+
+                    <i class="fa-brands fa-discord text-5xl text-indigo-400"></i>
+
+                    <h3 class="text-3xl font-bold mt-4">Join the Infinity Squad</h3>
+
+                    <p class="text-emerald-400">discord.gg/infinitygaming743</p>
+
+                </div>
+
+                <button onclick="hideDiscordModal()" class="text-white/60 hover:text-white text-4xl leading-none">×</button>
+
+            </div>
+
+            
+
+            <p class="mt-6 text-white/70">
+
+                Connect with 12,400+ gamers, get early access to drops, exclusive giveaways, 
+
+                voice lobbies and tournament sign-ups.
+
+            </p>
+
+            
+
+            <div class="mt-8 bg-black/50 rounded-2xl p-6 text-center">
+
+                <div class="text-sm uppercase tracking-widest mb-2">Instant Invite Link</div>
+
+                <a href="https://discord.gg/infinitygaming743" target="_blank"
+
+                   class="block py-6 text-2xl font-bold bg-indigo-600 hover:bg-indigo-500 text-white rounded-3xl">
+
+                    https://discord.gg/infinitygaming743
+
+                </a>
+
+                <p class="text-xs text-white/50 mt-4">Link expires in 7 days • Unlimited uses</p>
+
+            </div>
+
+            
+
+            <button onclick="hideDiscordModal()" 
+
+                    class="mt-8 w-full py-4 text-white/70 border border-white/30 hover:border-white rounded-3xl">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+    
+
+    <script>
+
+        /**
+
+         * Main script for dynamic interface behaviors
+
+         * - Tailwind initialization
+
+         * - Responsive mobile menu
+
+         * - Smooth scrolling
+
+         * - Modal for Discord
+
+         */
+
+        
+
+        function initializeTailwind() {
+
+            return {
+
+                config(userConfig = {}) {
+
+                    return {
+
+                        configUser: userConfig,
+
+                        theme: {
+
+                            extend: {
+
+                                colors: {
+
+                                    primary: '#00ff9f'
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                },
+
+                theme: {
+
+                    extend: {}
+
+                }
+
+            }
+
+        }
+
+        
+
+        // Initialize Tailwind on load
+
+        function initialize() {
+
+            const config = initializeTailwind()
+
+            document.documentElement.setAttribute('data-tailwind-config', JSON.stringify(config))
+
+            
+
+            // Make sure all elements have the tail-container class applied
+
+            console.log('%c✅ InfinityGaming_743 website loaded successfully!', 'color:#00ff9f; font-family:monospace; font-size:13px')
+
+            console.log('Fully responsive for Mobile • Tablet • Desktop')
+
+        }
+
+        
+
+        // Toggle mobile menu
+
+        function toggleMobileMenu() {
+
+            const menu = document.getElementById('mobile-menu')
+
+            const icon = document.getElementById('hamburger-icon')
+
+            
+
+            if (menu.classList.contains('hidden')) {
+
+                menu.style.display = 'block'
+
+                icon.classList.replace('fa-bars', 'fa-xmark')
+
+            } else {
+
+                menu.style.display = 'none'
+
+                icon.classList.replace('fa-xmark', 'fa-bars')
+
+            }
+
+        }
+
+        
+
+        // Smooth scroll to section
+
+        function smoothScrollTo(id) {
+
+            const element = document.getElementById(id)
+
+            if (element) {
+
+                const navOffset = 80
+
+                const elementPosition = element.getBoundingClientRect().top
+
+                const offsetPosition = elementPosition + window.scrollY - navOffset
+
+                
+
+                window.scrollTo({
+
+                    top: offsetPosition,
+
+                    behavior: 'smooth'
+
+                })
+
+                
+
+                // Close mobile menu if open
+
+                const mobileMenu = document.getElementById('mobile-menu')
+
+                if (mobileMenu.style.display === 'block') {
+
+                    toggleMobileMenu()
+
+                }
+
+            }
+
+        }
+
+        
+
+        // Discord modal controls
+
+        function showDiscordModal() {
+
+            const modal = document.getElementById('discord-modal')
+
+            modal.classList.remove('hidden')
+
+            modal.classList.add('flex')
+
+        }
+
+        
+
+        function hideDiscordModal() {
+
+            const modal = document.getElementById('discord-modal')
+
+            modal.classList.add('hidden')
+
+            modal.classList.remove('flex')
+
+        }
+
+        
+
+        // Keyboard escape support for modal
+
+        document.addEventListener('keydown', function(e) {
+
+            if (e.key === 'Escape') {
+
+                const modal = document.getElementById('discord-modal')
+
+                if (modal && modal.classList.contains('flex')) {
+
+                    hideDiscordModal()
+
+                }
+
+            }
+
+        })
+
+        
+
+        // Auto-initialize everything
+
+        window.onload = initialize
+
+    </script>
+
+</body>
+
+</html>
